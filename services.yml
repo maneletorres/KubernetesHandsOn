@@ -30,4 +30,38 @@ spec:
         - name: http
           port: 8161
           nodePort: 30010
-    type: NodePort 
+        - name: endpoint
+          port: 61616
+    type: NodePort
+    
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: fleetman-position-tracker
+spec:
+    # This defines whitch pods are going to be represented by this service.
+    # The services becomes a network endpoint for either services or maybe 
+    # external users to connect to (e.g.: browser).
+    selector:
+        app: position-tracker
+    ports:
+        - name: http
+          port: 8080
+    type: ClusterIP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: fleetman-api-gateway
+spec:
+    # This defines whitch pods are going to be represented by this service.
+    # The services becomes a network endpoint for either services or maybe 
+    # external users to connect to (e.g.: browser).
+    selector:
+        app: api-gateway
+    ports:
+        - name: http
+          port: 8080
+    type: ClusterIP
