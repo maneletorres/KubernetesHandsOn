@@ -1,1 +1,2 @@
 alertmanager.yaml
+readinessProbe_test.sh
