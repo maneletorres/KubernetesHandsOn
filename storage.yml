@@ -25,6 +25,6 @@ spec:
         - ReadWriteOnce
     hostPath:
         # directory location on host
-        path: /mnt/some new/directory/structure/
+        path: /mnt/some/directory/structure/mongodb
         # this field is optional
         type: DirectoryOrCreate
