@@ -20,6 +20,9 @@ spec:
                     memory: 300Mi # 1 Mi = 1024 Ki = 1024 bytes (So-called: power of 2 version)
                                   # 1 M  = 1024 K  = 1000 bytes
                     cpu: 100m
+                limits:
+                    memory: 300Mi
+                    cpu: 100m
 
 ---
 apiVersion: apps/v1
