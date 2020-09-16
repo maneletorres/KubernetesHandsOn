@@ -80,7 +80,7 @@ spec:
                 value: production-microservice
               envFrom:
               - configMapRef:
-                  name: global-database-config-v3
+                  name: global-database-config-v4
               resources:
                 requests:
                     memory: 200Mi
@@ -118,14 +118,14 @@ spec:
 
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet # Deployment
 metadata:
     name: webapp
 spec:
     selector:
         matchLabels:
             app: webapp
-    replicas: 1
+    # replicas: 1
     template: # template for the pods
         metadata:
             labels: 
